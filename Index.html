@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى ملكتي الغالية 👑</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5efe6, #e8dcd0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(139, 115, 85, 0.15);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .crown {
+            font-size: 50px;
+            color: #d4af37;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #4a3e3d;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #6b5b59;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 50px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-yes {
+            background-color: #d4af37;
+            color: white;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-yes:hover {
+            background-color: #baa02e;
+            transform: translateY(-2px);
+        }
+
+        .btn-no {
+            background-color: #e0d5cb;
+            color: #7a6e67;
+            position: absolute;
+            right: 35px;
+        }
+
+        /* رسالة النجاح المخفية */
+        .success-message {
+            display: none;
+            color: #8b7355;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="crown">👑</div>
+        <h1>حقك على راسي يا غالية..</h1>
+        <p>
+            بعرف إنو مبارح كان نهار مكركب وتعبان عليكي، ومن بعد كل الحكي والصلح رحت غطيت بالنوم بغير إرادتي.. 
+            <br>
+            أنا ما بقبل يضل جواتك أي شك أو زعل، والظاهر هاد تيسير من ربنا لحتى ننام وقلوبنا صافية. أنا كلي إلك هلق، وجاهز لأي حكم بتصدريه وعملي لبدك ياه.. بس المهم تكوني راضية ومطمنة.
+        </p>
+
+        <div class="buttons" id="btnContainer">
+            <button class="btn btn-yes" onclick="showLove()">صافي يا ملكتي؟ ❤️</button>
+            <button class="btn btn-no" id="noBtn" onmouseover="moveButton()">لا، لسه زعلانة 😤</button>
+        </div>
+
+        <div class="success-message" id="successMsg">
+            يقبرني الراضي والمصفى دايماً! طمنيني عن صحتك وتعبك اليوم؟ ربي ما يحرمني منك ومن وعيك العسل. 🥰✨
+        </div>
+    </div>
+
+    <script>
+        // حركة هروب زر الـ "لا" لحتى تنجبر تضغط على صافي
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * 120 - 60; // حركة عشوائية يمين ويسار
+            const y = Math.random() * 80 - 40;  // حركة عشوائية فوق وتحت
+            
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // عند الضغط على زر الموافقة
+        function showLove() {
+            document.getElementById('btnContainer').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
